@@ -1,0 +1,6 @@
+#Tue, 05 Jul 2016 19:25:14 +0200
+
+info.app.version=0.1
+info.app.name=BookInfo
+grails.env=production
+info.app.grailsVersion=3.1.2

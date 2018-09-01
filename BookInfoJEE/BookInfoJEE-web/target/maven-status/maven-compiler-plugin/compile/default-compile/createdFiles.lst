@@ -1,0 +1,10 @@
+com\bookinfo\Book_.class
+org\netbeans\rest\application\config\ApplicationConfig.class
+com\bookinfo\service\AbstractFacade.class
+com\bookinfo\Author_.class
+com\bookinfo\BookBBean.class
+com\bookinfo\service\BookFacadeREST.class
+com\bookinfo\Author.class
+com\bookinfo\service\AuthorFacadeREST.class
+com\bookinfo\service\NewCrossOriginResourceSharingFilter.class
+com\bookinfo\Book.class

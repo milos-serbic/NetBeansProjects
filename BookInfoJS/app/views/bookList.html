@@ -1,0 +1,30 @@
+<table border="1" cellpadding="3">
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr> 
+    <tr ng-repeat="book in bookList track by $index">
+        <td>{{book.title}}</td>
+        <td>{{book.authorId.name}}</td>
+        <td><button ng-click="editBook(book)">Edit</button></td>
+        <td><button ng-click="deleteBook(book)">Delete</button></td>
+    </tr> 
+</table>
+
+<br/>
+<br/>
+<form>
+    <table cellpadding="3">
+       <tr>
+           <td>Book Title:</td>
+           <td><input type="text" ng-model="newBook.title"/></td>
+       </tr>
+       <tr>
+           <td>Author:</td>
+           <td><input type="text" ng-model="newBook.authorId.name"/></td>
+       </tr>    
+    </table>
+    <button ng-click="saveBook()">Add Book</button>
+</form>

@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>BookList</title>
+    </h:head>
+    <h:body>
+         <h:form>
+            <br/>
+            <h:dataTable value="#{bookBBean.allBook}" var="book" border="1">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Title"/>
+                    </f:facet>
+                    #{book.title}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Author"/>
+                    </f:facet>
+                    #{book.authorId.name}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Edit"/>
+                    </f:facet>
+                    <h:commandButton value="Edit" action="#{bookBBean.getBook(book.id)}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Delete"/>
+                    </f:facet>
+                    <h:commandButton value="Delete" action="#{bookBBean.deleteBook(book.id)}"/>
+                </h:column>
+            </h:dataTable>
+        </h:form>
+        
+        <br/>
+        <br/>
+        <h:form>
+            <h:panelGrid columns = "2">
+                <h:outputLabel value = "Book Title:" />
+                <h:inputText value="#{bookBBean.bookTitle}"/>
+                <h:outputLabel value = "Author:" />
+                <h:inputText value="#{bookBBean.bookAuthor}"/>                
+            </h:panelGrid>
+            <h:commandButton value="Add Book" action="#{bookBBean.saveBook()}"/>
+        </h:form>       
+    </h:body>
+</html>
+
